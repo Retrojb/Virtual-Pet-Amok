@@ -1,16 +1,17 @@
 
-public class OrganicDogs extends OrganicPets {
+public class OrganicDogs extends OrganicPets implements DogWalking {
 	
-	OrganicPets pets = new OrganicPets(getPetName(), getPetType(), getPetHealth(), getPetHappiness(), getPetEnergy(), getPetFluid(), getPetAction(), getOrganicPetType());
 	
 	private boolean isInCage;
 	private int walkDog = 10;
 
 	public OrganicDogs(String petName, String petType, int petHealth, int petHappiness, int petEnergy, int petFluid,
-			int petAction, String OrganicPetType) {
+			int petAction, String OrganicPetType, int walkDog) {
 		super(petName, petType, petHealth, petHappiness, petEnergy, petFluid, petAction, OrganicPetType);
 		this.walkDog = walkDog;
 	}
+	
+	
 	public boolean isInCage() {
 		return isInCage;
 	}
@@ -18,14 +19,16 @@ public class OrganicDogs extends OrganicPets {
 	public void toogleIsInCage() {
 		isInCage = !isInCage;
 	}
-	public int getPetHappiness() {
-		return getPetHappiness();
+	public int getWalkDog() {
+		return walkDog;
 	}
-	
-	public int walkingTheDog() {
-		walkDog += getPetHappiness();
-		return getPetHappiness();
+
+//test this shit
+	@Override
+	public void dogWalking(OrganicDogs organicDogs) {
 		
+		walkDog += getPetHappiness();
+		return;
 	}
 
 }

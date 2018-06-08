@@ -1,5 +1,5 @@
 
-public class OrganicPets extends VirtualPet {
+public abstract class OrganicPets extends VirtualPet implements CleaningOrganicPets{
 	
 	private String OrganicPetType;
 	private int OrganicPetWaste;
@@ -27,4 +27,8 @@ public class OrganicPets extends VirtualPet {
 	public void setOrganicPetType(String organicPetType) {
 		OrganicPetType = organicPetType;
 	}
+	
+	//test this 
+	
+	
 }
