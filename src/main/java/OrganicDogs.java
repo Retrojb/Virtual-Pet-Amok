@@ -7,7 +7,7 @@ public class OrganicDogs extends OrganicPets implements DogWalking {
 
 	public OrganicDogs(String petName, String petType, int petHealth, int petHappiness, int petEnergy, int petFluid,
 			int petAction, String OrganicPetType, int walkDog, int petWaste) {
-		super(petName, petType, petHealth, petHappiness, petEnergy, petFluid, petAction, OrganicPetType);
+		super(petName, petType, petHealth, petHappiness, petEnergy, petFluid, petAction, OrganicPetType, petWaste, petWaste);
 		this.walkDog = walkDog;
 	}
 	
