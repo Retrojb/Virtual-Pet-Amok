@@ -49,4 +49,9 @@ public class RoboticPets extends VirtualPet {
 	public VirtualPet getRobotPets() {
 		return robotPets;
 	}
+
+	public void put(String roboticPetType2, RoboticPets roboticPets) {
+		// TODO Auto-generated method stub
+		
+	}
 }

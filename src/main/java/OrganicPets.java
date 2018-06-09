@@ -60,6 +60,10 @@ public class OrganicPets extends VirtualPet{
 	public VirtualPet getOrganicPets() {
 		return organicPets;
 	}
+	public void put(String organicPetType2, OrganicPets organicPets2) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	
