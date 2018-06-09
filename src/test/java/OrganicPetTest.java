@@ -2,7 +2,7 @@ import org.hamcrest.*;
 import org.junit.Assert;
 import org.junit.Test;
 public class OrganicPetTest {
-	OrganicPets organic = new OrganicPets(null, null, 0, 0, 0, 0, 0, null);
+	OrganicPets organic = new OrganicPets(null, null, 0, 0, 0, 0, 10, null, 50, 80);
 	@Test
 	public void shouldReturnRest() {
 		int underTest = organic.restPet();

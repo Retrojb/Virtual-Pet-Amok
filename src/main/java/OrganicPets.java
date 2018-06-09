@@ -21,7 +21,7 @@ public class OrganicPets extends VirtualPet{
 	//dogs can be walked
 	//have to clean waste 
 	
-	public OrganicPets(String petName, String petType, int petHealth, int petHappiness, int petEnergy, int petFluid, int petAction, String OrganicPetType) {
+	public OrganicPets(String petName, String petType, int petHealth, int petHappiness, int petEnergy, int petFluid, int petAction, String OrganicPetType, int petRest, int petWaste) {
 		super(petName, petType, petHealth, petHappiness, petEnergy, petFluid, petAction);
 		this.OrganicPetType = OrganicPetType;
 		this.petWaste = petWaste;
@@ -36,7 +36,7 @@ public class OrganicPets extends VirtualPet{
 		return petRest;
 	}
 	public int restPet() {
-		petRest += organicPets.getPetAction();
+		petRest += getPetAction();
 		return petRest;
 	}
 
