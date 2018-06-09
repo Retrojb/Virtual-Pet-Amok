@@ -84,7 +84,7 @@ public abstract class VirtualPet {
 		return petTick;
 	}
 
-	public VirtualPet() {
+	public VirtualPet(String newPetType, String nameOfNewPet, String newPetType2) {
 
 	}
 

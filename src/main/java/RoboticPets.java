@@ -1,6 +1,6 @@
 
 public class RoboticPets extends VirtualPet {
-	VirtualPet robotPets = new VirtualPet() {	
+	VirtualPet robotPets = new VirtualPet(null, null, 0, 0, 0, 0, 0) {	
 	};
 	private String roboticPetType;
 	private final int ROBOT_MAINTANCE = 50;

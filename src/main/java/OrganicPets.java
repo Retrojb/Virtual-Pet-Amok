@@ -1,6 +1,6 @@
 
 public class OrganicPets extends VirtualPet{
-	VirtualPet organicPets = new VirtualPet() {
+	VirtualPet organicPets = new VirtualPet(null, null, 0, 0, 0, 0, 0) {
 	};
 	private String OrganicPetType;
 	private final int PET_REST = 50;
