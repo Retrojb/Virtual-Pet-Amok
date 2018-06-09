@@ -1,6 +1,6 @@
 
 public interface DogWalking {
 	
-	public void dogWalking(OrganicDogs organicDogs);
+	public int dogWalking(OrganicDogs organicDogs);
 
 }

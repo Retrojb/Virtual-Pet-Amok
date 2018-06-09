@@ -1,12 +1,14 @@
 
-public class OrganicPets extends VirtualPet implements CleaningOrganicPets{
+public class OrganicPets extends VirtualPet{
 	VirtualPet organicPets = new VirtualPet() {
 	};
 	private String OrganicPetType;
-	private final int PET_WASTE = 0;
-	private int petWaste = PET_WASTE;
 	private final int PET_REST = 50;
+	private final int PET_WASTE = 0;
+	private final int PET_PLAYFULNESS = 50;
+	private int petWaste = PET_WASTE;
 	private int petRest = PET_REST;
+	private int petPlayfulness = PET_PLAYFULNESS;
 	//Organic Pet requirements
 	//need cages cleaned
 	//has to be feed (raises hunger by 10 & health by 5 & happiness by 5) CAN BE DONE TO ALL 
@@ -25,29 +27,38 @@ public class OrganicPets extends VirtualPet implements CleaningOrganicPets{
 		this.petWaste = petWaste;
 		this.petRest = petRest;
 	}
-
-	public int getPET_WASTE() {
-		return PET_WASTE;
-	}
-
-	public int getPET_REST() {
-		return PET_REST;
+	//test this 
+	public String getOrganicPetType() {
+		return OrganicPetType;
 	}
 
 	public int getPetRest() {
 		return petRest;
 	}
-	//test this 
-	public String getOrganicPetType() {
-		return OrganicPetType;
+	public int restPet() {
+		petRest += organicPets.getPetAction();
+		return petRest;
 	}
+
 	
 	public int getPetWaste() {
 		return petWaste;
 	}
-	public int restPet() {
-		petRest += organicPets.getPetAction();
-		return petRest;
+	public int cleanPetWaste() {
+		petWaste -= petWaste;
+		return petWaste;
+	}
+	
+	public int getPetPlayfulness() {
+		return petPlayfulness;
+	}
+	public int playWithOrganicPet() {
+		petPlayfulness += organicPets.getPetAction();
+		return petPlayfulness;
+	}
+	
+	public VirtualPet getOrganicPets() {
+		return organicPets;
 	}
 	
 	

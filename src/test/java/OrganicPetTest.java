@@ -8,4 +8,15 @@ public class OrganicPetTest {
 		int underTest = organic.restPet();
 		Assert.assertEquals(60, underTest);
 	}
+	
+	@Test
+	public void shouldReturnThatPetCageIsClean () {
+		int underTest = organic.cleanPetWaste();
+		Assert.assertEquals(0, underTest);
+	}
+	@Test
+	public void shouldReturnThatPetHasBeenPlayedWith() {
+		int underTest = organic.playWithOrganicPet();
+		Assert.assertEquals(60, underTest);
+	}
 }

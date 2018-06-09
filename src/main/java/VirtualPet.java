@@ -18,6 +18,8 @@ public abstract class VirtualPet {
 	private int petFluid = PET_FLUID;
 	private int petAction = PET_ACTION;
 	private int petTick = PET_TICK;
+	
+	private int petPlay = 50;
 
 	public VirtualPet(String petName, String petType, int petHealth, int petHappiness, int petEnergy, int petFluid,
 			int petAction) {
@@ -51,11 +53,29 @@ public abstract class VirtualPet {
 	public int getPetEnergy() {
 		return petEnergy;
 	}
-
+	public int feedPet(OrganicPets organicPets) {
+		petEnergy += petAction;
+		return petEnergy;
+	}
+	public int feedTick() {
+		petEnergy-=petTick;
+		return petEnergy;
+	}
+	
+	
 	public int getPetFluid() {
 		return petFluid;
 	}
+	public int fluidPet(OrganicPets organicPets) {
+		petFluid += petAction;
+		return petFluid;
+	}
+	public int FluidTick() {
+		petFluid -= petTick;
+		return petFluid;
+	}
 
+	
 	public int getPetAction() {
 		return petAction;
 	}
@@ -68,15 +88,8 @@ public abstract class VirtualPet {
 
 	}
 
-	public int feedPet(OrganicPets organicPets) {
-		petEnergy += petAction;
-		return petEnergy;
-	}
+	
 
-	public int fluidPet(OrganicPets organicPets) {
-		petFluid += petAction;
-		return petFluid;
-	}
 	
 
 
