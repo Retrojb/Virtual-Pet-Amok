@@ -77,6 +77,8 @@ public abstract class VirtualPet {
 		petFluid += petAction;
 		return petFluid;
 	}
+	
+
 
 
 

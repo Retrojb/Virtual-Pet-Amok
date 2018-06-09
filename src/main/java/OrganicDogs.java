@@ -6,8 +6,8 @@ public class OrganicDogs extends OrganicPets implements DogWalking {
 	private int walkDog = 10;
 
 	public OrganicDogs(String petName, String petType, int petHealth, int petHappiness, int petEnergy, int petFluid,
-			int petAction, String OrganicPetType, int walkDog) {
-		super(petName, petType, petHealth, petHappiness, petEnergy, petFluid, petAction, OrganicPetType);
+			int petAction, String OrganicPetType, int walkDog, int petWaste) {
+		super(petName, petType, petHealth, petHappiness, petEnergy, petFluid, petAction, OrganicPetType, petWaste);
 		this.walkDog = walkDog;
 	}
 	
@@ -30,5 +30,9 @@ public class OrganicDogs extends OrganicPets implements DogWalking {
 		walkDog += getPetHappiness();
 		return;
 	}
-
+//	@Override
+//	public void cleaningOrganicPets(OrganicPets organicPets);
+//		
+//	return;
+//}
 }
