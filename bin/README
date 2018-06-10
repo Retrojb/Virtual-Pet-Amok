@@ -1,0 +1,51 @@
+Virtual Pet Java Consule Application
+@Created by: John Baltes
+@We Can {CODE} IT Columbus OH
+2018:
+
+Using abstract class to gain an understanding for how object orientented programming works
+
+Requirements:
+have 2 different types of animal groups (organic and Robotic) 
+have 2 different types of animals (cats and dogs) 
+have waster effect the health of the animals(organic only)
+be able to walk all animals at once
+robot pets can not be feed or watered
+instead have to be oiled and maintained
+run a game tick that deducts stats from animals each time through the loop
+
+Generals of the code:
+
+Virtual Pets: 
+	PET_ENERGY: is the variable that will be used when for hunger in organic pets, while being
+	used as charge in the robotic pets. 
+	PET_THIRST: is the variable that will be used for thirst in the organic pet, while being
+	used as oiling in the robotic pet class.
+
+	game tick: the intervals of each action in the game will change the status of a pets by + / - 10 pts
+	upon ac5tion selection. While each action has a effect on the pets as a whole group through the tick method.
+	stats will be deducted each turn through by -5. in turn this makes the game more difficult to max out all stats
+	for all animals at any given time.
+	
+Organic Pets:
+	Organic pets create waste that needs top be cleaned up, waste is gained by 5 per tick. The user can only clean
+	one animal types waste at a time, but it rest the waste to zero by subtacting waste from waste (hacky, i know).
+		organic pets poop, and when you clean one you clean them all so that the logic behind that decisions. \
+	
+		Organic Dog and Cat rules:	
+			organic dogs required to be caged as they will chew up your shoes and destroy your keyboard. 
+			organic cats can roam freely, as it is almost impossible to cage a cat. \
+			organic dogs must be walked, while organic cats require a suffiecent amount of cat shine naps. 
+
+Robotic Pets:
+	require being oiled and maintained which is comporable to feeding and giving the organic pets water, 
+	robotic pets require less attention sense they are robots and don't have emotional needs like my cat currently does. 
+ 
+Virtual Pet Shelter:
+	handles all of the paper work process of adopting out and taking in animals
+	storing the animals information since this shelter doesn't believe in data basing its information, which would make
+	this entire ordeal so much easier. 
+	
+I hope you have enjoyed the README now go play with some animals, or continue reading to see what issues the app 
+is currently having and future plans for the app, once i have finished this boot camp, or have free time to play 
+around again. 

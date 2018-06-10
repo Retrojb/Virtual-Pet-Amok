@@ -1,34 +1,43 @@
-import java.io.ObjectInputStream.GetField;
 import java.util.Scanner;
 
 public class VirtualPetShelterApp {
 	static Scanner input = new Scanner(System.in);
 	static VirtualPetShelter virtualPets = new VirtualPetShelter();
+//	static VirtualPet  pets = new VirtualPet();
 	
 	
 	public static void main(String[] args) {
 		
 		virtualPets.addOrganicPet(new OrganicPets("Nya", "Organic", 100, 90, 60, 60, 10, "dog", 50, 30));
-		virtualPets.addOrganicPet(new OrganicPets("Thundercat", "Organic", 100, 60, 80, 60, 10, "dog", 40, 10));
-		virtualPets.addOrganicPet(new OrganicPets("LeBron", "Organic", 100, 40, 50, 60, 10, "cat", 50, 30));
-		virtualPets.addOrganicPet(new OrganicPets("Lana", "Organic", 100, 90, 60, 60, 10, "cat", 50, 30));
-		virtualPets.addOrganicPet(new OrganicPets("Esme", "Organic", 100, 90, 60, 60, 10, "dog", 50, 30));
+//		virtualPets.addOrganicPet(new OrganicPets("Thundercat", "Organic", 100, 60, 80, 60, 10, "dog", 40, 10));
+//		virtualPets.addOrganicPet(new OrganicPets("LeBron", "Organic", 100, 40, 50, 60, 10, "cat", 50, 30));
+//		virtualPets.addOrganicPet(new OrganicPets("Lana", "Organic", 100, 90, 60, 60, 10, "cat", 50, 30));
+//		virtualPets.addOrganicPet(new OrganicPets("Esme", "Organic", 100, 90, 60, 60, 10, "dog", 50, 30));
 		
 		virtualPets.addRoboticPet(new RoboticPets("Corl", "Robotic", 100, 40, 20, 60, 10, "dog", 50, 40));
-		virtualPets.addRoboticPet(new RoboticPets("Mimi", "Robotic", 100, 80, 50, 50, 10, "dog", 20, 70));
-		virtualPets.addRoboticPet(new RoboticPets("Phantom", "Robotic", 100, 40, 20, 60, 10, "cat", 50, 40));
-		virtualPets.addRoboticPet(new RoboticPets("Bear", "Robotic", 100, 40, 20, 60, 10, "dog", 50, 40));
-		virtualPets.addRoboticPet(new RoboticPets("Artimis", "Robotic", 100, 40, 30, 40, 10, "dog", 50, 40));
+//		virtualPets.addRoboticPet(new RoboticPets("Mimi", "Robotic", 100, 80, 50, 50, 10, "dog", 20, 70));
+//		virtualPets.addRoboticPet(new RoboticPets("Phantom", "Robotic", 100, 40, 20, 60, 10, "cat", 50, 40));
+//		virtualPets.addRoboticPet(new RoboticPets("Bear", "Robotic", 100, 40, 20, 60, 10, "dog", 50, 40));
+//		virtualPets.addRoboticPet(new RoboticPets("Artimis", "Robotic", 100, 40, 30, 40, 10, "dog", 50, 40));
 		
-		
+		virtualPets.getOrganicPetsFromMap();
 		System.out.println("Welcome to uncle Charles's Animal Shelter\nthe finest animal shelter in the Neatherlands.");
 		virtualPetShelterOptions();
 		String userInput = input.nextLine();
 		
 		switch (userInput) {
-		
+		case "0":
+			System.out.println(virtualPets.listOfOrganicPetsAndType());
+			System.out.println(virtualPets.getRoboticPets());
+			break;
 		//feed all animals
 		case "1":
+			System.out.println("Would you like to feed the Organic Pets? y/n");
+			String userFeedInput = input.nextLine();
+			if (userFeedInput.equalsIgnoreCase("y")) {
+			virtualPets.feedAllPets();
+			System.out.println();
+			}
 			
 			break;
 		case "2":
@@ -71,15 +80,14 @@ public class VirtualPetShelterApp {
 			break;
 		case "8":
 			break;
+			
 		case "9":
 			System.out.println("You want to leave Uncle Charles's virtual animal shelter");
 			System.out.println("have a great day!");
 			System.exit(0);
 			break;
-		case "0":
-			System.out.println(virtualPets.getOrganicPets());
-			System.out.println(virtualPets.getRoboticPets());
-			break;
+			
+		
 		}
 		
 		

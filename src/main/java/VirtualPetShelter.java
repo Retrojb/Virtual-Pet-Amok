@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -6,12 +5,26 @@ import java.util.Map;
 public class VirtualPetShelter {
 	Map<String, OrganicPets> organicPets = new HashMap<>();
 	Map<String, RoboticPets> roboticPets = new HashMap<>();
-//	private Collection<VirtualPet> virtualPets = new ArrayList<VirtualPet>();
 	
+	public Map<String, OrganicPets> getOrganicPetsFromMap() {
+		return organicPets;
+	}
+	public Map<String, RoboticPets> getRoboticPetsFromMap() {
+		return roboticPets;
+	}
+	public void setVirtualPetsOrganic(Map<String, OrganicPets> organicPets) {
+		this.organicPets = organicPets;
+	}
+	public void setVirtualPetsRobot(Map<String, RoboticPets> roboticPets) {
+		this.roboticPets = roboticPets;
+	}
 	public Collection<OrganicPets> getOrganicPets(){
 		return organicPets.values();
 	}
-	
+	public Collection<RoboticPets> getRoboticPets(){
+		return roboticPets.values();
+	}
+	//Organic Pets
 	public String listOfOrganicPetsAndType() {
 		String status = "";
 		for (OrganicPets organicPets: getOrganicPets()) {
@@ -19,28 +32,24 @@ public class VirtualPetShelter {
 		}
 		return status;
 	}
-	
 	public int getOrganicPetCount() {
 		return organicPets.size();
 	}
 	public void addOrganicPet (OrganicPets organicPets) {
 		organicPets.put(organicPets.getOrganicPetType(), organicPets);
 	}
-	public void removeRoboticPet(String petName) {
-		organicPets.remove(petName);
+	
+		public void feedAllPets() {
+			for (VirtualPet pet : organicPets.values()) {
+				pet.feedPet(pet);
+				
+			}
 	}
-	public Collection<OrganicPets> listOrganicPets() {
-		return organicPets.values();
-	}
-	public Map<String, OrganicPets> getOrganicPetsFromMap() {
-		return organicPets;
+	public void removeOrganicPet(String petName) {
+		roboticPets.remove(petName);
 	}
 	
-	
-	
-	public Collection<RoboticPets> getRoboticPets(){
-		return roboticPets.values();
-	}
+	//Robotic Pets
 	public String listOfRoboticPetsAndType() {
 		String status = "";
 		for (RoboticPets roboticPets: getRoboticPets()) {
@@ -48,21 +57,14 @@ public class VirtualPetShelter {
 		}
 		return status;
 	}
-	
 	public int getRoboticPetCount() {
 		return roboticPets.size();
 	}
 	public void addRoboticPet (RoboticPets roboticPets) {
 		roboticPets.put(roboticPets.getRoboticPetType(), roboticPets);
 	}
-	public void removeOrganicPet(String petName) {
-		roboticPets.remove(petName);
-	}
-	public Collection<RoboticPets> listOfRoboticPets(){
-		return roboticPets.values();
-	}
-	public Map<String, RoboticPets> getRoboticPetsFromMap() {
-		return roboticPets;
+	public void removeRoboticPet(String petName) {
+		organicPets.remove(petName);
 	}
 	
 	

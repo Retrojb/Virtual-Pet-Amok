@@ -1,37 +1,21 @@
 
+
 public abstract class VirtualPet {
 	private final int PET_HEALTH = 100;
 	private final int PET_HAPPINESS = 75;
-	private final int PET_ENERGY = 50;
-	private final int PET_FLUID = 50;
-	// energy is the component for robot energy (maintance levels) and organic
-	// hunger
-	// fluid represents the component of robot oil level and organic thirst
-	private final int PET_ACTION = 10;
 	private final int PET_TICK = 5;
+	String petName;
+	String petType;
+	protected int petHealth = PET_HEALTH;
+	protected int petHappiness = PET_HAPPINESS;
+	int petTick = PET_TICK;
 
-	private String petName;
-	private String petType;
-	private int petHealth = PET_HEALTH;
-	private int petHappiness = PET_HAPPINESS;
-	private int petEnergy = PET_ENERGY;
-	private int petFluid = PET_FLUID;
-	private int petAction = PET_ACTION;
-	private int petTick = PET_TICK;
-	
-	private int petPlay = 50;
-
-	public VirtualPet(String petName, String petType, int petHealth, int petHappiness, int petEnergy, int petFluid,
-			int petAction) {
+	public VirtualPet(String petName, String petType, int petHealth, int petHappiness) {
 		super();
 		this.petName = petName;
 		this.petType = petType;
 		this.petHealth = petHealth;
 		this.petHappiness = petHappiness;
-		this.petEnergy = petEnergy;
-		this.petFluid = petFluid;
-		this.petAction = petAction;
-
 	}
 
 	public String getPetName() {
@@ -50,50 +34,33 @@ public abstract class VirtualPet {
 		return petHappiness;
 	}
 
-	public int getPetEnergy() {
-		return petEnergy;
-	}
-	public int feedPet(OrganicPets organicPets) {
-		petEnergy += petAction;
-		return petEnergy;
-	}
-	public int feedTick() {
-		petEnergy-=petTick;
-		return petEnergy;
-	}
-	
-	
-	public int getPetFluid() {
-		return petFluid;
-	}
-	public int fluidPet(OrganicPets organicPets) {
-		petFluid += petAction;
-		return petFluid;
-	}
-	public int FluidTick() {
-		petFluid -= petTick;
-		return petFluid;
+	public boolean petIsLiving() {
+		return petHealth > 0;
 	}
 
-	
-	public int getPetAction() {
-		return petAction;
-	}
-
-	public int getPetTick() {
-		return petTick;
-	}
-
-	public VirtualPet(String newPetType, String nameOfNewPet, String newPetType2) {
+	public void tick() {
+		int tickTock = 2;
+		petHappiness -= tickTock;
+		petHealth -= tickTock;
 
 	}
 
-	
+	public String getHappy() {
+		if (petHappiness <= 0 || petHealth <= 0) {
+			return "I have withered away into nothing";
+		}
+		if (petHappiness <= 25 || petHealth <= 25) {
+			return "Oh the agony, why doth no one care for thy";
+		}
+		if (petHappiness <= 50 || petHealth <= 50) {
+			return "Lifes alright, could be better could be worse";
+		}
+		if (petHappiness <= 75 || petHealth <= 75) {
+			return "What a lovely life in the shelter";
+		}
+		return "Uncles Charles's shelter isn't to bad";
 
-	
-
-
-
+	}
 
 	@Override
 	public String toString() {

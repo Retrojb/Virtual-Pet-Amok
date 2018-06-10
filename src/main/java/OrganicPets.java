@@ -1,14 +1,95 @@
 
 public class OrganicPets extends VirtualPet{
-	VirtualPet organicPets = new VirtualPet(null, null, 0, 0, 0, 0, 0) {
+	public OrganicPets(String petName, String petType, int petHealth, int petHappiness) {
+		super(petName, petType, petHealth, petHappiness);
+		// TODO Auto-generated constructor stub
+	}
+	VirtualPet organicPets = new VirtualPet(petName, petType, petHealth, petHappiness) {
 	};
-	private String OrganicPetType;
-	private final int PET_REST = 50;
-	private final int PET_WASTE = 0;
-	private final int PET_PLAYFULNESS = 50;
-	private int petWaste = PET_WASTE;
-	private int petRest = PET_REST;
-	private int petPlayfulness = PET_PLAYFULNESS;
+
+	String OrganicPetType;
+	protected static final int PET_REST = 50;
+	protected static final int PET_WASTE = 0;
+	protected static final int PET_PLAYFULNESS = 50;
+	protected static final int PET_ENERGY = 50;
+	protected static final int PET_FLUID = 50;
+	int petWaste = PET_WASTE;
+	int petRest = PET_REST;
+	int petPlayfulness = PET_PLAYFULNESS;
+	int petEnergy = PET_ENERGY;
+	int petFluid = PET_FLUID;
+
+	
+	
+	public VirtualPet getOrganicPets() {
+		return organicPets;
+	}
+
+
+
+	public String getOrganicPetType() {
+		return OrganicPetType;
+	}
+
+
+// bathroom 
+	public int getPetWaste() {
+		return petWaste;
+	}
+	public void poopBreak() {
+		int poop = 3;
+		petWaste += poop;
+		petHealth += 20;
+	}
+
+	public int getPetRest() {
+		return petRest;
+	}
+	public void restPets() {
+		int restAction = 5;
+		petRest += restAction;
+		petHappiness += 3;
+	}
+
+
+	
+
+
+//Give Organic Pets Food
+	public int getPetEnergy() {
+		return petEnergy;
+	}
+	public void feedPet() {
+		int feedAction = 5;
+		petEnergy += feedAction;
+		petWaste +=feedAction;
+		petHappiness += 3;
+		petHealth += 5;
+	}
+
+//Give Organic Pets Water
+	public int getPetFluid() {
+		return petFluid;
+	}
+	public void waterPet() {
+		int waterAction = 5;
+		petFluid += waterAction;
+		petWaste += waterAction;
+		petHealth += 2;
+	}
+//Play with Organic Pets
+	public int getPetPlayfulness() {
+		return petPlayfulness;
+	}	
+	public void playWithPet() {
+		int playAction = 5;
+		petPlayfulness += playAction;
+		petEnergy -= playAction;
+		petWaste += 2;
+	}
+
+
+	
 	//Organic Pet requirements
 	//need cages cleaned
 	//has to be feed (raises hunger by 10 & health by 5 & happiness by 5) CAN BE DONE TO ALL 
@@ -21,50 +102,8 @@ public class OrganicPets extends VirtualPet{
 	//dogs can be walked
 	//have to clean waste 
 	
-	public OrganicPets(String petName, String petType, int petHealth, int petHappiness, int petEnergy, int petFluid, int petAction, String OrganicPetType, int petRest, int petWaste) {
-		super(petName, petType, petHealth, petHappiness, petEnergy, petFluid, petAction);
-		this.OrganicPetType = OrganicPetType;
-		this.petWaste = petWaste;
-		this.petRest = petRest;
-	}
-	//test this 
-	public String getOrganicPetType() {
-		return OrganicPetType;
-	}
 
-	public int getPetRest() {
-		return petRest;
-	}
-	public int restPet() {
-		petRest += getPetAction();
-		return petRest;
-	}
 
-	
-	public int getPetWaste() {
-		return petWaste;
-	}
-	public int cleanPetWaste() {
-		petWaste -= petWaste;
-		return petWaste;
-	}
-	
-	public int getPetPlayfulness() {
-		return petPlayfulness;
-	}
-	public int playWithOrganicPet() {
-		petPlayfulness += organicPets.getPetAction();
-		return petPlayfulness;
-	}
-	
-	public VirtualPet getOrganicPets() {
-		return organicPets;
-	}
-	public void put(String organicPetType2, OrganicPets organicPets2) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	
 	
 }
