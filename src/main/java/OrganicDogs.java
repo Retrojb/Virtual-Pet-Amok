@@ -22,7 +22,7 @@ public class OrganicDogs extends OrganicPets implements DogWalking {
 
 
 	@Override
-	public void dogWalking(OrganicDogs organicDogs) {
+	public void dogWalking() {
 		int walking = 5;
 		petEnergy -= walking;
 		petHappiness += walking;
