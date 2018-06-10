@@ -1,3 +1,4 @@
+import java.io.ObjectInputStream.GetField;
 import java.util.Scanner;
 
 public class VirtualPetShelterApp {
@@ -25,6 +26,8 @@ public class VirtualPetShelterApp {
 		String userInput = input.nextLine();
 		
 		switch (userInput) {
+		
+		//feed all animals
 		case "1":
 			
 			break;
@@ -35,13 +38,6 @@ public class VirtualPetShelterApp {
 		case "4":
 			break;
 		case "5":
-			break;
-			// this is where I am leaving off from
-			// i need to fix this before continue on to anything else.
-			//reference hospital project
-			//also creat a readme for all of the notes
-			// work on case
-		case "6":
 			System.out.println("What type of animal would you like to add?");
 			System.out.println("1: Organic\n2: Robotic");
 			String typeOfPetToAdd = input.nextLine();
@@ -51,15 +47,38 @@ public class VirtualPetShelterApp {
 			String newPetType = input.nextLine();
 			typeOfPetToAdd(typeOfPetToAdd, nameOfNewPet, newPetType);
 			break;
+			// this is where I am leaving off from
+			// i need to fix this before continue on to anything else.
+			//reference hospital project
+			//also creat a readme for all of the notes
+			// work on case
+		case "6":
+			System.out.println("Which animal is getting adopted out?");
+			System.out.println(virtualPets.listOfOrganicPetsAndType() + " " + virtualPets.listOfRoboticPetsAndType());
+			String virtualPetToAdopt = input.nextLine();
+			if (virtualPetToAdopt.equals(virtualPets.organicPets)) {
+				System.out.println("Please enter the name of Organic Pet that is leaving");
+				String organicPetAdoptedOut = input.nextLine();
+				virtualPets.organicPets.remove(organicPetAdoptedOut);	
+			} else if (virtualPetToAdopt.equals(virtualPets.roboticPets)) {
+				System.out.println("Please enter the name of Robotic Pet that is leaving");
+				String roboticPetAdoptedOut = input.nextLine();
+				virtualPets.roboticPets.remove(roboticPetAdoptedOut);
+			}
+			System.out.println(virtualPets.listOfOrganicPetsAndType() + " " + virtualPets.listOfRoboticPetsAndType());
+			break;
 		case "7":
 			break;
 		case "8":
 			break;
 		case "9":
+			System.out.println("You want to leave Uncle Charles's virtual animal shelter");
+			System.out.println("have a great day!");
+			System.exit(0);
 			break;
 		case "0":
-			System.out.println(virtualPets.listOfOrganicPetsAndType());
-			System.out.println(virtualPets.listOfRoboticPetsAndType());
+			System.out.println(virtualPets.getOrganicPets());
+			System.out.println(virtualPets.getRoboticPets());
 			break;
 		}
 		
