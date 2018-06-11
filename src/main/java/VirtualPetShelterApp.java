@@ -31,7 +31,6 @@ public class VirtualPetShelterApp {
 		switch (userInput) {
 		case "0":
 			System.out.println(virtualPets.fetchAllVirtualPets());
-			System.out.println(virtualPets.status());
 			break;
 		case "1":
 			virtualPets.feedOrganicPets();
@@ -40,7 +39,6 @@ public class VirtualPetShelterApp {
 				System.out.println(pet.getPetName() + " hunger is " + pet.petHealth);
 			});
 			virtualPets.gameTick();
-			System.out.println(virtualPets.status());
 			break;
 
 		case "2":
@@ -50,7 +48,6 @@ public class VirtualPetShelterApp {
 				System.out.println(pet.getPetName() + " thirst is ");
 			});
 			virtualPets.gameTick();
-			System.out.println(virtualPets.status());
 			System.out.println(" ");
 			break;
 
@@ -58,7 +55,6 @@ public class VirtualPetShelterApp {
 			virtualPets.playWithPets();
 			System.out.println("You have played with all of the pets");
 			virtualPets.gameTick();
-			System.out.println(virtualPets.status());
 			System.out.println(" ");
 			break;
 
@@ -66,7 +62,6 @@ public class VirtualPetShelterApp {
 			virtualPets.restWithPets();
 			System.out.println("Which animal do you want to rest with");
 			virtualPets.gameTick();
-			System.out.println(virtualPets.status());
 			break;
 
 		case "5":
@@ -76,7 +71,6 @@ public class VirtualPetShelterApp {
 			virtualPets.removePetFromShelter(animalLeaving);
 			virtualPets.removePetFromShelter(animalLeaving);
 			System.out.println("We will miss you " + animalLeaving);
-			System.out.println(virtualPets.status());
 			virtualPets.gameTick();
 			break;
 
