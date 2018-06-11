@@ -41,7 +41,16 @@ public class VirtualPetShelter {
 	}
 
 public void playWithPets() {
-	
+	for (VirtualPet pets: fetchAllVirtualPets()) {
+		playWithPets();
+	}
+//	public void walkAllDogs() {
+//		for (VirtualPet pets : fetchAllVirtualPets()) {
+//			if (pets instanceof DogWalking) {
+//				DogWalking;
+//			}
+//		}
+//	}
 }
 	
 	

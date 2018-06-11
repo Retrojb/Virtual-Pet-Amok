@@ -8,118 +8,22 @@ public class VirtualPetShelterApp {
 	
 	public static void main(String[] args) {
 		
-		virtualPets.addOrganicPet(new OrganicPets("Nya", "Organic", 100, 90, 60, 60, 10, "dog", 50, 30));
-//		virtualPets.addOrganicPet(new OrganicPets("Thundercat", "Organic", 100, 60, 80, 60, 10, "dog", 40, 10));
-//		virtualPets.addOrganicPet(new OrganicPets("LeBron", "Organic", 100, 40, 50, 60, 10, "cat", 50, 30));
-//		virtualPets.addOrganicPet(new OrganicPets("Lana", "Organic", 100, 90, 60, 60, 10, "cat", 50, 30));
-//		virtualPets.addOrganicPet(new OrganicPets("Esme", "Organic", 100, 90, 60, 60, 10, "dog", 50, 30));
-		
-		virtualPets.addRoboticPet(new RoboticPets("Corl", "Robotic", 100, 40, 20, 60, 10, "dog", 50, 40));
-//		virtualPets.addRoboticPet(new RoboticPets("Mimi", "Robotic", 100, 80, 50, 50, 10, "dog", 20, 70));
-//		virtualPets.addRoboticPet(new RoboticPets("Phantom", "Robotic", 100, 40, 20, 60, 10, "cat", 50, 40));
-//		virtualPets.addRoboticPet(new RoboticPets("Bear", "Robotic", 100, 40, 20, 60, 10, "dog", 50, 40));
-//		virtualPets.addRoboticPet(new RoboticPets("Artimis", "Robotic", 100, 40, 30, 40, 10, "dog", 50, 40));
-		
-		virtualPets.getOrganicPetsFromMap();
-		System.out.println("Welcome to uncle Charles's Animal Shelter\nthe finest animal shelter in the Neatherlands.");
+		System.out.println("Welcome to Uncle Charles Animal Shelter");
 		virtualPetShelterOptions();
 		String userInput = input.nextLine();
 		
-		switch (userInput) {
-		case "0":
-			System.out.println(virtualPets.listOfOrganicPetsAndType());
-			System.out.println(virtualPets.getRoboticPets());
-			break;
-		//feed all animals
-		case "1":
-			System.out.println("Would you like to feed the Organic Pets? y/n");
-			String userFeedInput = input.nextLine();
-			if (userFeedInput.equalsIgnoreCase("y")) {
-			virtualPets.feedAllPets();
-			System.out.println();
-			}
-			
-			break;
-		case "2":
-			break;
-		case "3":
-			break;
-		case "4":
-			break;
-		case "5":
-			System.out.println("What type of animal would you like to add?");
-			System.out.println("1: Organic\n2: Robotic");
-			String typeOfPetToAdd = input.nextLine();
-			System.out.println("What is the animals name?");
-			String nameOfNewPet = input.nextLine();
-			System.out.println("What kind of animal is it?");
-			String newPetType = input.nextLine();
-			typeOfPetToAdd(typeOfPetToAdd, nameOfNewPet, newPetType);
-			break;
-			// this is where I am leaving off from
-			// i need to fix this before continue on to anything else.
-			//reference hospital project
-			//also creat a readme for all of the notes
-			// work on case
-		case "6":
-			System.out.println("Which animal is getting adopted out?");
-			System.out.println(virtualPets.listOfOrganicPetsAndType() + " " + virtualPets.listOfRoboticPetsAndType());
-			String virtualPetToAdopt = input.nextLine();
-			if (virtualPetToAdopt.equals(virtualPets.organicPets)) {
-				System.out.println("Please enter the name of Organic Pet that is leaving");
-				String organicPetAdoptedOut = input.nextLine();
-				virtualPets.organicPets.remove(organicPetAdoptedOut);	
-			} else if (virtualPetToAdopt.equals(virtualPets.roboticPets)) {
-				System.out.println("Please enter the name of Robotic Pet that is leaving");
-				String roboticPetAdoptedOut = input.nextLine();
-				virtualPets.roboticPets.remove(roboticPetAdoptedOut);
-			}
-			System.out.println(virtualPets.listOfOrganicPetsAndType() + " " + virtualPets.listOfRoboticPetsAndType());
-			break;
-		case "7":
-			break;
-		case "8":
-			break;
-			
-		case "9":
-			System.out.println("You want to leave Uncle Charles's virtual animal shelter");
-			System.out.println("have a great day!");
-			System.exit(0);
-			break;
-			
-		
-		}
-		
-		
-		
-		
-		
+//	public static void userChoice1()	
 		
 		
 	}
 	
-	private static void typeOfPetToAdd (String typeOfPetToAdd, String nameOfNewPet, String newPetType) {
-		
-		switch(typeOfPetToAdd) {
-		case "1":
-			System.out.println("So this is an Organic Animal");
-			System.out.println("What type of animal?");
-			VirtualPet newPet = new VirtualPet(newPetType, nameOfNewPet, newPetType) {
-			};
-			virtualPets.organicPets.put(nameOfNewPet, (OrganicPets) newPet);
-			break;
-		case "2":
-			System.out.println("What type of pet is it?");
-			break;
-		case "3":
-			break;
-		case "4":
-			break;
-		}
-	}
 	
 	public static void virtualPetShelterOptions() {
-		System.out.println("\r\n" +
+		System.out.println("Virtual Pets: \r\n" + 
+				"__________________________________________________________________________\r\n" + 
+				"Name\t|Type\t|Health\tHappiness\t|Hunger\t|Water\t|Play\t|Rest\t|Waste\t|\r\n" + 
+				"	"
+				+ "\r\n" +
 				"		Press 0: List all Animals\r\n"+
 				"		Press 1: Feed Animals\r\n" + 
 				"		Press 2: Water Animals\r\n" + 
