@@ -64,7 +64,14 @@ public class VirtualPetShelter {
 			}
 		});
 	}
-
+	public void walkDogs() {
+		fetchAllVirtualPets().forEach(shelter ->{
+			if(shelter instanceof OrganicDogs) {
+				((OrganicDogs)shelter).dogWalking();
+			}
+		});
+	}
+	
 	public void restWithPets() {
 		fetchAllVirtualPets().forEach(shelter -> {
 			if (shelter instanceof OrganicPets) {
