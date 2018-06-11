@@ -7,6 +7,10 @@ public abstract class RoboticDog extends RoboticPets{
 	public RoboticDog(String petName, String petType, int petHealth, int petHappiness, int petEnergy, int petFluid,
 			int petAction, String roboticPetType, int robotMaintance, int robotSanity) {
 		super(petName, petType, petHealth, petHappiness);
+		this.petName = petName;
+		this.petType = petType;
+		this.petHealth = 100;
+		this.petHappiness = 80;
 	}
 	public boolean isInCage() {
 		return isInCage;

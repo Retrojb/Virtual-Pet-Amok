@@ -67,5 +67,7 @@ public abstract class VirtualPet {
 		return getPetName() + " " + getPetType() + " " + getPetHealth() + " " + getPetHappiness();
 	}
 
+	
+
 }
  

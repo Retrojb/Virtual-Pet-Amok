@@ -4,10 +4,14 @@ public class OrganicDogs extends OrganicPets implements DogWalking {
 	private boolean isInCage;
 	private int walkDog = 10;
 	public OrganicDogs(String petName, String petType, int petHealth, int petHappiness) {
-		super(petName, petType, petHealth, petHappiness);
+		super(petName, petType, petHealth, petHappiness, petEnergy, petFluid, petPlayfulness, petRest);
+		this.petName = petName;
+		this.petType = petType;
+		this.petHealth = 100;
+		this.petHappiness = 80;
 		
-	}
-	
+		}
+
 	public boolean isInCage() {
 		return isInCage;
 	}

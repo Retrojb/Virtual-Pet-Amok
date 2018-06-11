@@ -1,9 +1,7 @@
 
 public class OrganicPets extends VirtualPet{
-	public OrganicPets(String petName, String petType, int petHealth, int petHappiness) {
-		super(petName, petType, petHealth, petHappiness);
-		// TODO Auto-generated constructor stub
-	}
+	
+	
 	VirtualPet organicPets = new VirtualPet(petName, petType, petHealth, petHappiness) {
 	};
 
@@ -13,14 +11,30 @@ public class OrganicPets extends VirtualPet{
 	protected static final int PET_PLAYFULNESS = 50;
 	protected static final int PET_ENERGY = 50;
 	protected static final int PET_FLUID = 50;
-	int petWaste = PET_WASTE;
-	int petRest = PET_REST;
-	int petPlayfulness = PET_PLAYFULNESS;
-	int petEnergy = PET_ENERGY;
-	int petFluid = PET_FLUID;
+	static int petWaste = PET_WASTE;
+	static int petRest = PET_REST;
+	static int petPlayfulness = PET_PLAYFULNESS;
+	static int petEnergy = PET_ENERGY;
+	static int petFluid = PET_FLUID;
 
 	
-	
+	public OrganicPets(String petName, String petType, int petHealth, int petHappiness, int petEnergy, int petFluid, int petPlayfulness, int petRest) {
+		super(petName, petType, petHealth, petHappiness);
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public VirtualPet getOrganicPets() {
 		return organicPets;
 	}

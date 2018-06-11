@@ -4,6 +4,10 @@ public class OrganicCats extends OrganicPets {
 	public OrganicCats(String petName, String petType, int petHealth, int petHappiness, int petEnergy, int petFluid,
 			int petAction, String OrganicPetType, int petRest, int petWaste) {
 		super(petName, petType, petHealth, petHappiness);
+		this.petName = petName;
+		this.petType = petType;
+		this.petHealth = 100;
+		this.petHappiness = 60;
 	}
 	
 	@Override
