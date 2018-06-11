@@ -28,6 +28,14 @@ public class RoboticPets extends VirtualPet {
 		petHappiness += robotParts;
 		petHealth += robotParts;
 	}
+	
+	public void roboticTick() {
+		int tickAmount = 3;
+		petHealth -= tickAmount;
+		petHappiness -= tickAmount;
+		oil -= tickAmount;
+		maintance -= tickAmount;
+	}
 
 	
 }

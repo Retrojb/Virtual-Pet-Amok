@@ -22,29 +22,13 @@ public class OrganicPets extends VirtualPet{
 		super(petName, petType, petHealth, petHappiness);
 		
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public VirtualPet getOrganicPets() {
 		return organicPets;
 	}
 
-
-
 	public String getOrganicPetType() {
 		return OrganicPetType;
 	}
-
 
 // bathroom 
 	public int getPetWaste() {
@@ -64,10 +48,6 @@ public class OrganicPets extends VirtualPet{
 		petRest += restAction;
 		petHappiness += 3;
 	}
-
-
-	
-
 
 //Give Organic Pets Food
 	public int getPetEnergy() {
@@ -102,7 +82,14 @@ public class OrganicPets extends VirtualPet{
 		petWaste += 2;
 	}
 
-
+	public void organicPetTick() {
+		int tickAmount = 3;
+		petHealth -= tickAmount;
+		petHappiness -= tickAmount;
+		petEnergy -= tickAmount;
+		petFluid -= tickAmount;
+		petRest -= tickAmount;
+	}
 	
 	//Organic Pet requirements
 	//need cages cleaned
@@ -115,9 +102,5 @@ public class OrganicPets extends VirtualPet{
 	// tick for organic waste +5
 	//dogs can be walked
 	//have to clean waste 
-	
-
-
-	
-	
+		
 }

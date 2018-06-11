@@ -105,6 +105,17 @@ public class VirtualPetShelter {
 		}
 		return count;
 	}
+
+	public void gameTick() {
+		fetchAllVirtualPets().forEach(shelter -> {
+			if (shelter instanceof RoboticPets) {
+				((RoboticPets) shelter).roboticTick();
+			}
+			if (shelter instanceof OrganicPets) {
+				((OrganicPets) shelter).organicPetTick();
+			}
+		});
+	}
 }
 
 

@@ -68,6 +68,9 @@ public abstract class VirtualPet {
 	}
 
 	
+	public void gameTick() {
+		
 
+}
 }
  

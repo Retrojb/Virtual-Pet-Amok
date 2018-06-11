@@ -4,12 +4,12 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class VirtualPetShelterApp {
+	
 	private static final String petName = null;
 	static Scanner input = new Scanner(System.in);
 	static VirtualPetShelter virtualPets = new VirtualPetShelter();
-//	static VirtualPet  pets = new VirtualPet();
-	
-	
+
+		
 	public static void main(String[] args) {
 		VirtualPet esme = new OrganicDogs("Esme", "dog", 100, 100);
 		VirtualPet carl = new RoboticPets("Carl", "dog", 100, 70);
@@ -17,19 +17,17 @@ public class VirtualPetShelterApp {
 //		pets.addPetToShelter(carl);
 		System.out.println("Welcome to Uncle Charles Animal Shelter");
 		virtualPetShelterOptions(virtualPets);
-		String userInput = input.nextLine();
+		
 		petsIntoShelter(virtualPets);
 	}	
-	public void gameLoop(Scanner userInput)	{
-//		if () {
-//			pets.gameTick();
-	
+	public static void gameLoop(VirtualPetShelter pets, String userInput)	{
+		
 	  // FEEDING
 			if (userInput.equals("1")) {
 				virtualPets.feedOrganicPets();
 				System.out.println("You have feed all of the pets!");
 				virtualPets.fetchAllVirtualPets().forEach(pet -> {
-					System.out.println(pet.getPetName() + " hunger is " );
+					System.out.println(pet.getPetName() + " hunger is " + pet.petHealth);
 				});
 				System.out.println(" ");
 			}
@@ -111,7 +109,7 @@ public class VirtualPetShelterApp {
 	@SuppressWarnings("unchecked")
 	public static void virtualPetShelterOptions(VirtualPetShelter shelter) {
 		
-		for (int count = 0; count < 100; count++) {
+		for (int count = 0; count < 2; count++) {
 		System.out.println("Name\t|Type\t|Health\tHappiness\t|Hunger\t|Water\t|Play\t|Rest\t|Waste\t|");
 		for (VirtualPet pets: virtualPets.shelter.values()) {
 			System.out.println(((Map<String, VirtualPet>) pets).values());
@@ -127,7 +125,8 @@ public class VirtualPetShelterApp {
 				"Press 7: Clean up Animals \r\n" + 
 				"Press 8: Walk Animals \r\n" + 
 				"Press 9: Leave Uncle Charles's Animal Shelter"); 
-
+		String userInput = input.nextLine();
+		gameLoop(virtualPets, userInput);
 	}
 }
 }
