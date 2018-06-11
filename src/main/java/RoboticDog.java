@@ -1,5 +1,5 @@
 
-public abstract class RoboticDog extends RoboticPets{
+public class RoboticDog extends RoboticPets{
 
 	private int walkDog = 10;
 	private boolean isInCage;

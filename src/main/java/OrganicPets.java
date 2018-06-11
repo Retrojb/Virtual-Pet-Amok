@@ -103,4 +103,10 @@ public class OrganicPets extends VirtualPet{
 	//dogs can be walked
 	//have to clean waste 
 		
+
+@Override
+public String toString() {
+	return "" + petName + "\t\t|" + petType + "\t|" + petHealth + "\t\t|" + petHappiness + "\t|" + petEnergy + "\t|" + petFluid
+			+ "\t|" + petWaste + "\t\t-";
+}
 }

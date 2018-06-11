@@ -7,6 +7,14 @@ import java.util.Set;
 import org.mockito.internal.matchers.Or;
 public class VirtualPetShelter {
 	Map <String, VirtualPet> shelter = new HashMap<>();
+	Map <String, OrganicPets> organic = new HashMap<>();
+	Map <String, RoboticPets> robotic = new HashMap<>();
+	public Map<String, OrganicPets> getOrganicPets(){
+		return organic;
+	}
+	public Map<String, RoboticPets> getRoboticPets(){
+		return robotic;
+	}
 	
 	public void addPetToShelter (VirtualPet pet) {
 		shelter.put(pet.petName, pet);
@@ -57,14 +65,15 @@ public class VirtualPetShelter {
 			}
 		});
 	}
-	
+
 	public void restWithPets() {
 		fetchAllVirtualPets().forEach(shelter -> {
-			if(shelter instanceof OrganicPets) {
+			if (shelter instanceof OrganicPets) {
 				((OrganicPets) shelter).restPets();
 			}
 		});
 	}
+
 	public void oilRoboticPets() {
 		fetchAllVirtualPets().forEach(shelter -> {
 			if(shelter instanceof RoboticPets) {
