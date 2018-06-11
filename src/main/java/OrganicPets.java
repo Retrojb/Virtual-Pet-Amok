@@ -39,7 +39,9 @@ public class OrganicPets extends VirtualPet{
 		petWaste += poop;
 		petHealth += 20;
 	}
-
+	public void cleanCage() {
+		petWaste -= petWaste;
+	}
 	public int getPetRest() {
 		return petRest;
 	}

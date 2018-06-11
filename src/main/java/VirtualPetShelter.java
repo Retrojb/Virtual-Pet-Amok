@@ -2,13 +2,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
-import org.mockito.internal.matchers.Or;
 public class VirtualPetShelter {
 	Map <String, VirtualPet> shelter = new HashMap<>();
 	Map <String, OrganicPets> organic = new HashMap<>();
 	Map <String, RoboticPets> robotic = new HashMap<>();
+	
 	public Map<String, OrganicPets> getOrganicPets(){
 		return organic;
 	}
@@ -124,6 +123,47 @@ public class VirtualPetShelter {
 				((OrganicPets) shelter).organicPetTick();
 			}
 		});
+	}
+	public String status() {
+		String space = "\t|";
+		String statusChanges = "Name\t|Type\t|Health\t|Boredom|Hunger\t|Thirst\t|Waste\t|Dryness|Dirtyness\n";
+		for (VirtualPet pet : fetchAllVirtualPets()) {
+			String skip = "";
+			if (pet instanceof OrganicDogs) {
+				skip = "OrgDog";
+			} else if (pet instanceof OrganicCats) {
+				skip = "OrgCat";
+			} else if (pet instanceof RoboticDog) {
+				skip = "RobDog";
+			} else {
+				skip = "RobCat";
+			}
+			if (pet instanceof OrganicPets) {
+				OrganicPets organic = (OrganicPets) pet;
+				statusChanges += organic.getPetName() + space + skip + space + organic.getPetHealth() + space + organic.getHappy() + space
+						+ organic.getPetEnergy() + space + organic.getPetFluid() + space + organic.getPetWaste() + space + "N/A" + space
+						+ organic.getPetWaste() + "\n";
+			} else {
+				RoboticPets robot = (RoboticPets) pet;
+				statusChanges += robot.getPetName() + space + skip + space + robot.getPetHealth() + space + robot.getPetHappiness() + space
+						+ robot.getOil() + space + robot.getMaintance()  + space + "N/A" + space + "N/A"+ space + "N/A" + "\n";
+			}
+		}
+		return statusChanges;
+}
+	public void cleanDogCage() {
+		for (VirtualPet pets : fetchAllVirtualPets()) {
+			if (pets instanceof OrganicDogs) {
+				((OrganicPets)pets).cleanCage();
+			}
+		}
+	}
+	public void cleanCatBox() {
+		for (VirtualPet pets : fetchAllVirtualPets()) {
+			if (pets instanceof OrganicCats) {
+				((OrganicPets)pets).cleanCage();
+			}
+		}
 	}
 }
 
